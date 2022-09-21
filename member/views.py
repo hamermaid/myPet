@@ -74,7 +74,7 @@ def login(request):
         token = jwt.encode(payload, "secretJWTkey", algorithm="HS256")
 
         res = {
-            'jwt': token
+            'jwt': token.decode('utf8')
         }
     return DefaultResponse(200, res)
 
