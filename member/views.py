@@ -1,4 +1,5 @@
 import datetime
+import json
 
 import jwt
 from django.contrib import auth
@@ -25,15 +26,17 @@ def update_profile(request, user_id):
 @csrf_exempt
 def signup(request):
     if request.method == "POST":
-        if request.POST["password1"] == request.POST["password2"]:
+        data = json.loads(request.body)
+        if data["password1"] == data["password2"]:
+        # if request.POST["password1"] == request.POST["password2"]:
             user = User.objects.create_user(
-                username=request.POST["username"],
-                password=request.POST["password1"])
-            nickname = request.POST["nickname"]
-            area = request.POST["area"]
-            profile = Profile(user_id=user.id, nickname=nickname, area=area)
+                username=data["username"],
+                password=data["password1"])
+            nickname = data["nickname"]
+            # area = data["area"]
+            profile = Profile(user_id=user.id, nickname=nickname)
             profile.nickname = nickname
-            profile.area = area
+            # profile.area = area
             profile.save()
 
             auth.login(request, user)
@@ -51,18 +54,25 @@ def signup(request):
 @csrf_exempt
 def login(request):
     if request.method == "POST":
-        username = request.POST['username']
-        password = request.POST['password']
+        data = json.loads(request.body)
+        # username = request.POST["username"]
+        # password = request.POST["password"]
+
+        username = data["username"]
+        password = data["password"]
 
         # email is unique,
-        user = User.objects.get(username=username)
+        try:
+            user = User.objects.get(username=username)
+        except User.DoesNotExist:
+            return DefaultResponse(400, '잘못된 정보입니다')
 
-        if user is None:
-            raise AuthenticationFailed('User does not found!')
+        # if user is None:
+        #     return DefaultResponse(400, '잘못된 정보입니다')
 
         # is same?
         if not user.check_password(password):
-            raise AuthenticationFailed("Incorrect password!")
+            return DefaultResponse(400, '잘못된 정보입니다')
 
         ## JWT 구현 부분
         payload = {
