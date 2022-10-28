@@ -1,0 +1,784 @@
+{
+  "canvas": {
+    "version": "2.2.11",
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": -97.0666666666664,
+    "scrollLeft": -131.20000000000007,
+    "zoomLevel": 0.9,
+    "show": {
+      "tableComment": true,
+      "columnComment": true,
+      "columnDataType": true,
+      "columnDefault": true,
+      "columnAutoIncrement": false,
+      "columnPrimaryKey": true,
+      "columnUnique": false,
+      "columnNotNull": true,
+      "relationship": true
+    },
+    "database": "MySQL",
+    "databaseName": "",
+    "canvasType": "ERD",
+    "language": "GraphQL",
+    "tableCase": "pascalCase",
+    "columnCase": "camelCase",
+    "highlightTheme": "VS2015",
+    "bracketType": "none",
+    "setting": {
+      "relationshipDataTypeSync": true,
+      "relationshipOptimization": false,
+      "columnOrder": [
+        "columnName",
+        "columnDataType",
+        "columnNotNull",
+        "columnUnique",
+        "columnAutoIncrement",
+        "columnDefault",
+        "columnComment"
+      ]
+    },
+    "pluginSerializationMap": {}
+  },
+  "table": {
+    "tables": [
+      {
+        "name": "HOSPITAL",
+        "comment": "병원",
+        "columns": [
+          {
+            "name": "HOS_ID",
+            "comment": "병원 코드",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "1a3b3467-d485-463b-9dda-e1d9e0e7b4a0"
+          },
+          {
+            "name": "NAME",
+            "comment": "이름",
+            "dataType": "VARCHAR(50)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 82.1328125,
+              "widthDefault": 60
+            },
+            "id": "660ee6c5-cdb0-4f80-9c9f-44cac99df2cf"
+          },
+          {
+            "name": "NUMBER",
+            "comment": "전화번호",
+            "dataType": "VARBINARY(20)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 92.7587890625,
+              "widthDefault": 60
+            },
+            "id": "150f576c-efeb-4808-85b0-6914b8f7a124"
+          },
+          {
+            "name": "LINK",
+            "comment": "홈페이지",
+            "dataType": "VARCHAR(2000)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 96.453125,
+              "widthDefault": 60
+            },
+            "id": "8a6bfdc7-965d-47c7-b348-5d0ed90f5051"
+          },
+          {
+            "name": "LOCATION",
+            "comment": "시, 구",
+            "dataType": "VARCHAR(2000)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 64.06103515625,
+              "widthComment": 60,
+              "widthDataType": 96.453125,
+              "widthDefault": 60
+            },
+            "id": "1a1ba677-27a9-4448-9251-60119a7a24ba"
+          },
+          {
+            "name": "ADDRESS",
+            "comment": "도로명 주소",
+            "dataType": "VARCHAR(2000)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 71.5703125,
+              "widthDataType": 96.453125,
+              "widthDefault": 60
+            },
+            "id": "c6aa4d3a-8238-4b73-a2bb-4e976ba0edda"
+          },
+          {
+            "name": "SUBWAY",
+            "comment": "가까운 지하철 출구",
+            "dataType": "VARCHAR(1000)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 115.140625,
+              "widthDataType": 96.453125,
+              "widthDefault": 60
+            },
+            "id": "f061a5f1-1806-4428-828d-54c3f7ce40ea"
+          },
+          {
+            "name": "FACILITLY",
+            "comment": "시설 정보",
+            "dataType": "VARCHAR(2000)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 96.453125,
+              "widthDefault": 60
+            },
+            "id": "b7505855-43d9-4add-8326-0733678b8cd1"
+          },
+          {
+            "name": "ANIMAL",
+            "comment": "진료가능 동물",
+            "dataType": "VARCHAR(2000)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 84.5703125,
+              "widthDataType": 96.453125,
+              "widthDefault": 60
+            },
+            "id": "a0f8451a-c9bc-4fac-8a5d-9aef2de8525f"
+          },
+          {
+            "name": "CLINIC",
+            "comment": "진료가능 항목",
+            "dataType": "VARCHAR(2000)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 84.5703125,
+              "widthDataType": 96.453125,
+              "widthDefault": 60
+            },
+            "id": "5e134c79-1370-4b0d-8d5b-0d8f9dbf5ad0"
+          },
+          {
+            "name": "OPEN_TIME",
+            "comment": "진료시간",
+            "dataType": "JSON",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 70.7705078125,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "8c1fb47f-2f80-42b0-aa53-4a80578bc857"
+          },
+          {
+            "name": "BREAK_TIME",
+            "comment": "점심시간",
+            "dataType": "TIME",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 75.1630859375,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "7e9df8e8-8064-4457-9b2c-d00a7b375b3f"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 116.25,
+          "top": 166.5,
+          "zIndex": 319,
+          "widthName": 60.14453125,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "0a2735bc-415b-455f-a8f4-ae7ae8c37640"
+      },
+      {
+        "name": "CLINIC",
+        "comment": "진료항목별 코드",
+        "columns": [],
+        "ui": {
+          "active": true,
+          "left": 1060.2499,
+          "top": 43.2222,
+          "zIndex": 343,
+          "widthName": 60,
+          "widthComment": 97.5703125
+        },
+        "visible": true,
+        "id": "895322bd-bb5e-4679-9603-faec6fcc5d7e"
+      },
+      {
+        "name": "REVIEW",
+        "comment": "",
+        "columns": [
+          {
+            "name": "REVIEW_ID",
+            "comment": "리뷰 코드",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 66.09228515625,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "abec8a1e-de08-4d43-833b-bf411643b12c"
+          },
+          {
+            "name": "HOS_ID",
+            "comment": "병원 코드",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "20967069-db44-49be-b920-b18dd69a69c8"
+          },
+          {
+            "name": "USER_ID",
+            "comment": "회원 코드",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "b547525b-309c-4d62-8404-ff4fbd9cd036"
+          },
+          {
+            "name": "STAR",
+            "comment": "평균 별점",
+            "dataType": "VARCHAR(5)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 74.97265625,
+              "widthDefault": 60
+            },
+            "id": "97ce03eb-3247-4169-928c-fd1144ab32bd"
+          },
+          {
+            "name": "PICTURE",
+            "comment": "사진",
+            "dataType": "VARCHAR(2000)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 96.453125,
+              "widthDefault": 60
+            },
+            "id": "726263b1-d5a9-448c-a00f-7c9eadf06d06"
+          },
+          {
+            "name": "DETAIL",
+            "comment": "상세 리뷰",
+            "dataType": "VARCHAR(2000)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 96.453125,
+              "widthDefault": 60
+            },
+            "id": "009ea57d-e5ad-4143-a209-2ee2a50f547b"
+          },
+          {
+            "name": "HEART",
+            "comment": "도움됐어요 수",
+            "dataType": "VARCHAR(1000)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 84.5703125,
+              "widthDataType": 96.453125,
+              "widthDefault": 60
+            },
+            "id": "c136b892-683c-4d89-a6be-8e0dd62434cc"
+          },
+          {
+            "name": "PRICE",
+            "comment": "진료금액 세부내역",
+            "dataType": "JSON",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 110.5703125,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "035f91fc-9539-4044-af15-2d85dfaa1d8f"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 1053.3341,
+          "top": 438.3613,
+          "zIndex": 334,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "e541b394-7384-4d37-a995-ce1bd14b2db2"
+      },
+      {
+        "name": "USER",
+        "comment": "회원",
+        "columns": [
+          {
+            "name": "USER_ID",
+            "comment": "회원 코드",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "ba7498e3-95b4-43df-a38c-60eb4454c038"
+          },
+          {
+            "name": "EMAIL",
+            "comment": "이메일",
+            "dataType": "VARCHAR(200)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 89.29296875,
+              "widthDefault": 60
+            },
+            "id": "03ecbcfa-7fee-40cf-8dc7-6cc586e37bc8"
+          },
+          {
+            "name": "PWD",
+            "comment": "비밀번호",
+            "dataType": "VARCHAR(60)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 82.1328125,
+              "widthDefault": 60
+            },
+            "id": "0e13751c-b69e-4b63-9788-cc33fac93202"
+          },
+          {
+            "name": "NICK_NAME",
+            "comment": "닉네임",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 74.06494140625,
+              "widthComment": 60,
+              "widthDataType": 89.29296875,
+              "widthDefault": 60
+            },
+            "id": "b62c6bd1-755f-4fcc-b924-31965d7a226f"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 138.3057,
+          "top": 581.2775,
+          "zIndex": 331,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "64376f24-84a3-47d5-9c65-0eed64e6f6fc"
+      },
+      {
+        "name": "LIKE",
+        "comment": "찜하기/도움됐어요",
+        "columns": [
+          {
+            "name": "POST_ID",
+            "comment": "병원/리뷰 코드",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 89.71826171875,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "51599a72-5f32-47b4-9071-480afc0fed08"
+          },
+          {
+            "name": "USER_ID",
+            "comment": "유저 코드",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "746a71bd-1d67-430c-9b87-cd30b531eac2"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 824.3333,
+          "top": 201.5334,
+          "zIndex": 341,
+          "widthName": 60,
+          "widthComment": 111.14794921875
+        },
+        "visible": true,
+        "id": "344e3823-f86a-4a09-869c-b31fcb999913"
+      }
+    ],
+    "indexes": []
+  },
+  "memo": {
+    "memos": []
+  },
+  "relationship": {
+    "relationships": [
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "0a2735bc-415b-455f-a8f4-ae7ae8c37640",
+          "columnIds": [
+            "1a3b3467-d485-463b-9dda-e1d9e0e7b4a0"
+          ],
+          "x": 570.0068359375,
+          "y": 324,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "e541b394-7384-4d37-a995-ce1bd14b2db2",
+          "columnIds": [
+            "20967069-db44-49be-b920-b18dd69a69c8"
+          ],
+          "x": 1053.3341,
+          "y": 613.1113,
+          "direction": "left"
+        },
+        "constraintName": "fk_hospital_to_review",
+        "visible": true,
+        "id": "0eff20b7-776c-422b-ad69-a0bf3d76088f"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "64376f24-84a3-47d5-9c65-0eed64e6f6fc",
+          "columnIds": [
+            "ba7498e3-95b4-43df-a38c-60eb4454c038"
+          ],
+          "x": 528.66361015625,
+          "y": 656.7775,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "e541b394-7384-4d37-a995-ce1bd14b2db2",
+          "columnIds": [
+            "b547525b-309c-4d62-8404-ff4fbd9cd036"
+          ],
+          "x": 1053.3341,
+          "y": 496.6113,
+          "direction": "left"
+        },
+        "constraintName": "fk_user_to_review",
+        "visible": true,
+        "id": "0e1d2b06-a3b6-46e4-90cd-fc5399c9acde"
+      }
+    ]
+  }
+}
