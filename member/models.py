@@ -6,6 +6,7 @@ from django.dispatch import receiver
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user_code = models.CharField(max_length=5, blank=True, unique=True)
     nickname = models.TextField(max_length=500, blank=True)
     # area = models.CharField(max_length=30, blank=True)
 
@@ -17,3 +18,8 @@ class Profile(models.Model):
     # @receiver(post_save, sender=User)
     # def save_user_profile(sender, instance, **kwargs):
     #     instance.profile.save()
+
+
+class Like(models.Model):
+    post_id = models.IntegerField(blank=True, null=True)
+    user_id = models.IntegerField(blank=True, null=True)

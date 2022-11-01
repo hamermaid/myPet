@@ -1,6 +1,6 @@
 {
   "canvas": {
-    "version": "2.2.11",
+    "version": "2.2.10",
     "width": 2000,
     "height": 2000,
     "scrollTop": -97.0666666666664,
@@ -210,7 +210,7 @@
           {
             "name": "FACILITLY",
             "comment": "시설 정보",
-            "dataType": "VARCHAR(2000)",
+            "dataType": "VARCHAR(3000)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -302,7 +302,7 @@
           {
             "name": "BREAK_TIME",
             "comment": "점심시간",
-            "dataType": "TIME",
+            "dataType": "VARCHAR(2000)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -317,17 +317,40 @@
               "pfk": false,
               "widthName": 75.1630859375,
               "widthComment": 60,
-              "widthDataType": 60,
+              "widthDataType": 96.453125,
               "widthDefault": 60
             },
             "id": "7e9df8e8-8064-4457-9b2c-d00a7b375b3f"
+          },
+          {
+            "name": "PICTURE",
+            "comment": "사진",
+            "dataType": "VARCHAR(2000)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 96.453125,
+              "widthDefault": 60
+            },
+            "id": "50faae7c-3d78-481c-ad4d-aa61cb4f1f96"
           }
         ],
         "ui": {
           "active": false,
           "left": 116.25,
           "top": 166.5,
-          "zIndex": 319,
+          "zIndex": 28,
           "widthName": 60.14453125,
           "widthComment": 60
         },
@@ -339,10 +362,10 @@
         "comment": "진료항목별 코드",
         "columns": [],
         "ui": {
-          "active": true,
+          "active": false,
           "left": 1060.2499,
           "top": 43.2222,
-          "zIndex": 343,
+          "zIndex": 5,
           "widthName": 60,
           "widthComment": 97.5703125
         },
@@ -542,7 +565,7 @@
           "active": false,
           "left": 1053.3341,
           "top": 438.3613,
-          "zIndex": 334,
+          "zIndex": 19,
           "widthName": 60,
           "widthComment": 60
         },
@@ -554,7 +577,7 @@
         "comment": "회원",
         "columns": [
           {
-            "name": "USER_ID",
+            "name": "USER_CODE",
             "comment": "회원 코드",
             "dataType": "INT",
             "default": "",
@@ -569,7 +592,7 @@
               "pk": true,
               "fk": false,
               "pfk": false,
-              "widthName": 60,
+              "widthName": 72.5478515625,
               "widthComment": 60,
               "widthDataType": 60,
               "widthDefault": 60
@@ -647,10 +670,10 @@
           }
         ],
         "ui": {
-          "active": false,
+          "active": true,
           "left": 138.3057,
           "top": 581.2775,
-          "zIndex": 331,
+          "zIndex": 31,
           "widthName": 60,
           "widthComment": 60
         },
@@ -712,7 +735,7 @@
           "active": false,
           "left": 824.3333,
           "top": 201.5334,
-          "zIndex": 341,
+          "zIndex": 4,
           "widthName": 60,
           "widthComment": 111.14794921875
         },
@@ -737,7 +760,7 @@
             "1a3b3467-d485-463b-9dda-e1d9e0e7b4a0"
           ],
           "x": 570.0068359375,
-          "y": 324,
+          "y": 334.25,
           "direction": "right"
         },
         "end": {
@@ -746,7 +769,7 @@
             "20967069-db44-49be-b920-b18dd69a69c8"
           ],
           "x": 1053.3341,
-          "y": 613.1113,
+          "y": 496.6113,
           "direction": "left"
         },
         "constraintName": "fk_hospital_to_review",
@@ -772,7 +795,7 @@
             "b547525b-309c-4d62-8404-ff4fbd9cd036"
           ],
           "x": 1053.3341,
-          "y": 496.6113,
+          "y": 613.1113,
           "direction": "left"
         },
         "constraintName": "fk_user_to_review",
