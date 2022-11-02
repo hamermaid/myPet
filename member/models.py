@@ -5,8 +5,8 @@ from django.dispatch import receiver
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    user_code = models.CharField(max_length=5, blank=True, unique=True)
+    # user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user_id = models.CharField(max_length=5, blank=True, null=True, unique=True)
     nickname = models.TextField(max_length=500, blank=True)
     # area = models.CharField(max_length=30, blank=True)
 

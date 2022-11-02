@@ -18,12 +18,6 @@ from member.models import Profile
 from modual.response import DefaultResponse
 
 
-def update_profile(request, user_id):
-    user = User.objects.get(pk=user_id)
-    user.profile.nickname = 'test'
-    user.save()
-    
-
 @csrf_exempt
 def signup(request):
     if request.method == "POST":
@@ -34,20 +28,26 @@ def signup(request):
             u = len(User.objects.all())
             hos_id = str(u + 1) + "3"
             userCode = hos_id.zfill(4)
+            # 이메일 중복 검사
             try:
-                user = User.objects.create_user(
-                    username=data["username"],
-                    password=data["password1"])
-            except IntegrityError:
-                return DefaultResponse(400, '중복된 이메일입니다.')
-            nickname = data["nickname"]
-            profile = Profile(user_id=user.id, nickname=nickname, user_code=userCode)
-            profile.nickname = nickname
-            # profile.area = area
-            profile.save()
+                User.objects.get(email=data["username"])
+            except User.DoesNotExist:
+                try:
+                    user = User.objects.create_user(
+                        username=userCode,
+                        email=data["username"],
+                        password=data["password1"])
+                except IntegrityError:
+                    return DefaultResponse(400, '잘못된 데이터입니다.')
+                nickname = data["nickname"]
+                profile = Profile(user_id=userCode, nickname=nickname)
+                profile.nickname = nickname
+                # profile.area = area
+                profile.save()
 
-            auth.login(request, user)
-            return DefaultResponse(200, '회원가입에 성공했습니다.')
+                auth.login(request, user)
+                return DefaultResponse(200, '회원가입에 성공했습니다.')
+            return DefaultResponse(400, '중복된 이메일입니다.')
         return DefaultResponse(400, '비밀번호가 일치하지 않습니다.')
 
 
@@ -70,7 +70,7 @@ def login(request):
 
         # email is unique,
         try:
-            user = User.objects.get(username=username)
+            user = User.objects.get(email=username)
         except User.DoesNotExist:
             return DefaultResponse(400, '잘못된 정보입니다')
 
@@ -104,7 +104,7 @@ def email(request):
         email = data["email"]
         print(email)
         try:
-            user = User.objects.get(username=email)
+            user = User.objects.get(email=email)
         except User.DoesNotExist:
             return DefaultResponse(200, '사용 가능한 이메일입니다.')
 
