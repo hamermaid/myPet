@@ -3,8 +3,8 @@
     "version": "2.2.10",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -97.0666666666664,
-    "scrollLeft": -141.20000000000007,
+    "scrollTop": 0,
+    "scrollLeft": -393,
     "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
@@ -344,13 +344,36 @@
               "widthDefault": 60
             },
             "id": "50faae7c-3d78-481c-ad4d-aa61cb4f1f96"
+          },
+          {
+            "name": "STAR",
+            "comment": "병원 평균 별점",
+            "dataType": "VARCHAR(5)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 89.140625,
+              "widthDataType": 74.97265625,
+              "widthDefault": 60
+            },
+            "id": "19055385-cf7e-4351-9d47-e7407b9ca165"
           }
         ],
         "ui": {
           "active": false,
           "left": 116.25,
           "top": 166.5,
-          "zIndex": 28,
+          "zIndex": 297,
           "widthName": 60.14453125,
           "widthComment": 60
         },
@@ -360,12 +383,59 @@
       {
         "name": "CLINIC",
         "comment": "진료항목별 코드",
-        "columns": [],
+        "columns": [
+          {
+            "name": "CLINIC_ID",
+            "comment": "진료항목 구분 코드",
+            "dataType": "VARCHAR(5)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60.0810546875,
+              "widthComment": 115.140625,
+              "widthDataType": 74.97265625,
+              "widthDefault": 60
+            },
+            "id": "3c698b61-ed73-48c3-bc35-1d04f11a2e45"
+          },
+          {
+            "name": "NAME",
+            "comment": "진료항목 한글 이름",
+            "dataType": "VARCHAR(50)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 115.140625,
+              "widthDataType": 82.1328125,
+              "widthDefault": 60
+            },
+            "id": "99377d05-b489-4565-bdab-f12b28b86316"
+          }
+        ],
         "ui": {
           "active": false,
-          "left": 1060.2499,
-          "top": 43.2222,
-          "zIndex": 5,
+          "left": 1065.2499,
+          "top": 12.2225,
+          "zIndex": 299,
           "widthName": 60,
           "widthComment": 97.5703125
         },
@@ -446,8 +516,8 @@
             "id": "b547525b-309c-4d62-8404-ff4fbd9cd036"
           },
           {
-            "name": "STAR",
-            "comment": "평균 별점",
+            "name": "STAR_AVG",
+            "comment": "리뷰 평균 별점",
             "dataType": "VARCHAR(5)",
             "default": "",
             "option": {
@@ -461,8 +531,8 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
+              "widthName": 61.794921875,
+              "widthComment": 89.140625,
               "widthDataType": 74.97265625,
               "widthDefault": 60
             },
@@ -562,10 +632,10 @@
           }
         ],
         "ui": {
-          "active": true,
-          "left": 1016.6678,
-          "top": 169.4727,
-          "zIndex": 130,
+          "active": false,
+          "left": 804.3347,
+          "top": 222.4723,
+          "zIndex": 277,
           "widthName": 60,
           "widthComment": 60
         },
@@ -780,12 +850,110 @@
         },
         "visible": true,
         "id": "ce9c1373-c32d-45e6-a3d5-b1c436b315f1"
+      },
+      {
+        "name": "STAR",
+        "comment": "리뷰 진료항목 별점",
+        "columns": [
+          {
+            "name": "REVIEW_ID",
+            "comment": "리뷰 코드",
+            "dataType": "VARCHAR(5)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 66.09228515625,
+              "widthComment": 60,
+              "widthDataType": 74.97265625,
+              "widthDefault": 60
+            },
+            "id": "50377b73-f606-4854-a115-4d051d2eb65c"
+          },
+          {
+            "name": "CLINIC_ID",
+            "comment": "진료항목 구분 코드",
+            "dataType": "VARCHAR(5)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60.0810546875,
+              "widthComment": 115.140625,
+              "widthDataType": 74.97265625,
+              "widthDefault": 60
+            },
+            "id": "f347d190-47bc-49fa-a93d-220ba6df7432"
+          },
+          {
+            "name": "STAR",
+            "comment": "별점",
+            "dataType": "VARCHAR(5)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 74.97265625,
+              "widthDefault": 60
+            },
+            "id": "4c9b0d0d-c3b4-441a-8d4e-cd5ac702c5b3"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 1359.2,
+          "top": 274,
+          "zIndex": 292,
+          "widthName": 60,
+          "widthComment": 115.140625
+        },
+        "visible": true,
+        "id": "afc4f2c0-b206-4918-968a-23f50f92a1ab"
       }
     ],
     "indexes": []
   },
   "memo": {
-    "memos": []
+    "memos": [
+      {
+        "value": "CLINIC_ID NAME\n0014       진료효과\n0024       의사의 친절\n0034       직원의 친절\n0044       정결함",
+        "ui": {
+          "active": false,
+          "left": 1493.2,
+          "top": 9,
+          "zIndex": 269,
+          "width": 172,
+          "height": 100
+        },
+        "id": "48400a4c-5669-44ee-a17b-721330e29a42"
+      }
+    ]
   },
   "relationship": {
     "relationships": [
@@ -799,7 +967,7 @@
             "1a3b3467-d485-463b-9dda-e1d9e0e7b4a0"
           ],
           "x": 570.0068359375,
-          "y": 334.25,
+          "y": 344.5,
           "direction": "right"
         },
         "end": {
@@ -807,8 +975,8 @@
           "columnIds": [
             "20967069-db44-49be-b920-b18dd69a69c8"
           ],
-          "x": 1016.6678,
-          "y": 285.97270000000003,
+          "x": 804.3347,
+          "y": 338.9723,
           "direction": "left"
         },
         "constraintName": "fk_hospital_to_review",
@@ -840,6 +1008,32 @@
         "constraintName": "fk_user_to_profile",
         "visible": true,
         "id": "47e063a5-620d-465e-ac66-c765ca4dc298"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneOnly",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "e541b394-7384-4d37-a995-ce1bd14b2db2",
+          "columnIds": [
+            "abec8a1e-de08-4d43-833b-bf411643b12c"
+          ],
+          "x": 1244.4504226562499,
+          "y": 338.9723,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "afc4f2c0-b206-4918-968a-23f50f92a1ab",
+          "columnIds": [
+            "50377b73-f606-4854-a115-4d051d2eb65c"
+          ],
+          "x": 1359.2,
+          "y": 339.25,
+          "direction": "left"
+        },
+        "constraintName": "fk_review_to_star",
+        "visible": true,
+        "id": "58f99d6a-1a1c-4542-85d3-5176986bbab9"
       }
     ]
   }
