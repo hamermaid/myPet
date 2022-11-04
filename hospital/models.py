@@ -27,3 +27,4 @@ class Hospital(models.Model):
     open_time = models.TextField(blank=True, null=True)
     break_time = models.CharField(max_length=2000, blank=True, null=True)
     picture = models.CharField(max_length=2000, blank=True, null=True)
+    star = models.CharField(max_length=5, blank=True, null=True)

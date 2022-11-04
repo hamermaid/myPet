@@ -9,7 +9,7 @@ from modual.response import DefaultResponse
 def list(request):
     if request.method == "GET":
         req = request.GET['id']
-        hos = Hospital.objects.get(id=req)
+        hos = Hospital.objects.get(hos_id=req)
         # data = list(hos.values())
         print('hos', hos)
         keyword = hos.animal_keyword.split(',') + hos.service_keyword.split(',')
@@ -21,17 +21,15 @@ def list(request):
         for i in favorite:
             if i == user:
                 is_favorite = True
-        # 현재 날짜와 오픈 시간 비교해서 오픈 여부 반환
         data = {
-            "hospital_name": hos.hospital_name,
+            "hospital_name": hos.name,
             "address": hos.address,
-            "ratings": hos.ratings,
-            "reviews": hos.reviews,
-            "open_hour": hos.open_hour,
+            # "ratings": hos.ratings,
+            # "reviews": hos.reviews,
+            # "open_hour": hos.open_hour,
             "restAt": hos.restAt,
             "labels": [keyword],
             "is_favorite": is_favorite,
-            "now_open": 'true',
           }
     # return DefaultResponse(200, testData)
     return DefaultResponse(200, data)
