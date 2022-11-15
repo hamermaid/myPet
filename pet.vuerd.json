@@ -95,7 +95,7 @@
           {
             "name": "NUMBER",
             "comment": "전화번호",
-            "dataType": "VARBINARY(20)",
+            "dataType": "VARCHAR(20)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -110,7 +110,7 @@
               "pfk": false,
               "widthName": 60,
               "widthComment": 60,
-              "widthDataType": 92.7587890625,
+              "widthDataType": 82.1328125,
               "widthDefault": 60
             },
             "id": "150f576c-efeb-4808-85b0-6914b8f7a124"
@@ -373,7 +373,7 @@
           "active": false,
           "left": 116.25,
           "top": 166.5,
-          "zIndex": 7,
+          "zIndex": 34,
           "widthName": 60.14453125,
           "widthComment": 60
         },
@@ -763,7 +763,7 @@
           }
         ],
         "ui": {
-          "active": true,
+          "active": false,
           "left": 156.0833,
           "top": 609.0549,
           "zIndex": 31,

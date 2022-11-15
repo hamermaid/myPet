@@ -38,9 +38,10 @@ hour = worksheet.col_values(4)[1:]
 break_hour = worksheet.col_values(5)[1:]
 animal = worksheet.col_values(6)[1:]
 service = worksheet.col_values(7)[1:]
-address = worksheet.col_values(8)[1:]
-subway = worksheet.col_values(9)[1:]
-website = worksheet.col_values(11)[1:]
+number = worksheet.col_values(8)[1:]
+address = worksheet.col_values(9)[1:]
+subway = worksheet.col_values(10)[1:]
+website = worksheet.col_values(12)[1:]
 # 현재 상황: 스프레드시트에서 칼럼별로 데이터를 list로 가져오고 있음
 # 문제: 가져온 list의 길이가 일정하지 않음
 # 원인: 없는 데이터를 ''로 가져오는게 아니라 뒷부분이 없으면 더 이상 가져오지 않음
@@ -51,7 +52,8 @@ for i in range(0, len(name)):
     # 코드 4자리 채우기
     id = hos_id.zfill(4)
     hos = Hospital(hos_id=id, name=name[i], address=address[i], location=location[i], animal=animal[i],
-                   break_time=break_hour[i], facilitly=service[i], link=website[i], open_time=hour[i], subway=subway[i])
+                   break_time=break_hour[i], facilitly=service[i], link=website[i], open_time=hour[i], subway=subway[i],
+                   number=number[i])
     hos.save()
 print(len(break_hour))
 print(len(service))
