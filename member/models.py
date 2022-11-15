@@ -8,6 +8,8 @@ class Profile(models.Model):
     # user = models.OneToOneField(User, on_delete=models.CASCADE)
     user_id = models.CharField(max_length=5, blank=True, null=True, unique=True)
     nickname = models.TextField(max_length=500, blank=True)
+    likeCnt = models.IntegerField(default=0)
+    manner = models.IntegerField(default=0)
     # area = models.CharField(max_length=30, blank=True)
 
     # @receiver(post_save, sender=User)
