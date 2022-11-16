@@ -6,7 +6,7 @@ from django.contrib import auth
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.shortcuts import render
-
+from myPet.settings import SECRET_KEY
 
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
@@ -82,16 +82,24 @@ def login(request):
             return DefaultResponse(400, '아이디와 비밀번호가 일치하지 않습니다.')
 
         ## JWT 구현 부분
-        payload = {
+        access = {
             'id': user.username,
             'exp': datetime.datetime.now() + datetime.timedelta(minutes=60),
-            'iat': datetime.datetime.now()
+            'iat': datetime.datetime.now(),
+            "token_type": "access",
+        }
+        refresh = {
+            'id': user.username,
+            'exp': datetime.datetime.now() + datetime.timedelta(minutes=120),
+            'iat': datetime.datetime.now(),
+            "token_type": "refresh",
         }
 
-        token = jwt.encode(payload, "secretJWTkey", algorithm="HS256")
-
+        acc_token = jwt.encode(access, SECRET_KEY, algorithm="HS256")
+        re_token = jwt.encode(refresh, SECRET_KEY, algorithm="HS256")
         res = {
-            'jwt': token.decode('utf8')
+            'access': acc_token.decode('utf8'),
+            'refresh': re_token.decode('utf8')
         }
     return DefaultResponse(200, res)
 

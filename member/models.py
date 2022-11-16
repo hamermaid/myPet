@@ -10,6 +10,7 @@ class Profile(models.Model):
     nickname = models.TextField(max_length=500, blank=True)
     likeCnt = models.IntegerField(default=0)
     manner = models.IntegerField(default=0)
+    refresh_token = models.TextField(max_length=500, blank=True)
     # area = models.CharField(max_length=30, blank=True)
 
     # @receiver(post_save, sender=User)
