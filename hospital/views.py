@@ -18,7 +18,7 @@ def info(request, hos_id):
         animal = hos.animal.split(',')
         info = hos.facilitly.split(',')
         open = hos.open_time.split('/')
-        
+
         # '' 제거
         animal = [v for v in animal if v]
         info = [v for v in info if v]
@@ -27,8 +27,9 @@ def info(request, hos_id):
         openAt = []
         for i in open:
             if '휴무' in i:
-                restAt.append(i.replace(' 휴무', '').strip().split(','))
-                # restAt = i
+                # restAt.append(i.replace(' 휴무', '').strip().split(','))
+                restAt = i.replace(' 휴무', '').strip().split(',')
+                print('restAT', restAt)
             else:
                 openAt.append(i.strip())
 
