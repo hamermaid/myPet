@@ -760,13 +760,36 @@
               "widthDefault": 60
             },
             "id": "45acc72c-a2ea-48d0-85a7-da7c2d1b6631"
+          },
+          {
+            "name": "REFRESH_TOKEN",
+            "comment": "refresh 토큰",
+            "dataType": "TEXT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 100.5029296875,
+              "widthComment": 72.5732421875,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "7e5e8cec-8deb-48bd-adbf-2069f4367c92"
           }
         ],
         "ui": {
-          "active": false,
+          "active": true,
           "left": 156.0833,
           "top": 609.0549,
-          "zIndex": 31,
+          "zIndex": 48,
           "widthName": 60,
           "widthComment": 60
         },
@@ -1038,8 +1061,8 @@
           "columnIds": [
             "1dd473d4-6585-4a32-b31e-04745063d3ac"
           ],
-          "x": 598.23027265625,
-          "y": 694.8049,
+          "x": 628.0198234375,
+          "y": 705.0549,
           "direction": "right"
         },
         "end": {
