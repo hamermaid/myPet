@@ -1,5 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
 
+from modual.decorator import TokenCheck, token_required
 from modual.response import CustomResponse, DefaultResponse
 from .models import Post
 from .serializers import PostSerializer
@@ -28,6 +29,8 @@ def customRes(request):
     return CustomResponse(200, '상태 메세지 변경 가능', testData)
 
 
+# @TokenCheck
+@token_required
 def defaultRes(request):
     testData = {
         'ex': '예시 데이터'

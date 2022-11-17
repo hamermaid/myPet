@@ -5,17 +5,12 @@ import jwt
 from django.contrib import auth
 from django.contrib.auth.models import User
 from django.db import IntegrityError
-from django.shortcuts import render
-from myPet.settings import SECRET_KEY
-
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
-from rest_framework.exceptions import AuthenticationFailed
-from rest_framework.response import Response
-from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
 from member.models import Profile
 from modual.response import DefaultResponse
+from myPet.settings import SECRET_KEY
 
 
 @csrf_exempt
@@ -74,9 +69,6 @@ def login(request):
         except User.DoesNotExist:
             return DefaultResponse(400, '잘못된 정보입니다')
 
-        # if user is None:
-        #     return DefaultResponse(400, '잘못된 정보입니다')
-
         # is same?
         if not user.check_password(password):
             return DefaultResponse(400, '아이디와 비밀번호가 일치하지 않습니다.')
@@ -84,22 +76,27 @@ def login(request):
         ## JWT 구현 부분
         access = {
             'id': user.username,
-            'exp': datetime.datetime.now() + datetime.timedelta(minutes=60),
-            'iat': datetime.datetime.now(),
+            'exp': (datetime.datetime.now() + datetime.timedelta(minutes=60)).strftime("%Y%m%d%H%M%S"),
+            'iat': datetime.datetime.now().strftime("%Y%m%d%H%M%S"),
             "token_type": "access",
         }
         refresh = {
             'id': user.username,
-            'exp': datetime.datetime.now() + datetime.timedelta(minutes=120),
-            'iat': datetime.datetime.now(),
+            'exp': (datetime.datetime.now() + datetime.timedelta(minutes=120)).strftime("%Y%m%d%H%M%S"),
+            'iat': datetime.datetime.now().strftime("%Y%m%d%H%M%S"),
             "token_type": "refresh",
         }
 
-        acc_token = jwt.encode(access, SECRET_KEY, algorithm="HS256")
-        re_token = jwt.encode(refresh, SECRET_KEY, algorithm="HS256")
+        acc_token = jwt.encode(access, SECRET_KEY, algorithm="HS256").decode('utf8')
+        re_token = jwt.encode(refresh, SECRET_KEY, algorithm="HS256").decode('utf8')
+
+        profile = Profile.objects.get(user_id=user.username)
+        profile.refresh_token = re_token
+        profile.save()
+
         res = {
-            'access': acc_token.decode('utf8'),
-            'refresh': re_token.decode('utf8')
+            'access': acc_token,
+            'refresh': re_token
         }
     return DefaultResponse(200, res)
 
@@ -110,7 +107,6 @@ def email(request):
         data = json.loads(request.body)
 
         email = data["email"]
-        print(email)
         try:
             user = User.objects.get(email=email)
         except User.DoesNotExist:

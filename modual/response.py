@@ -5,6 +5,9 @@ from django.http import HttpResponse
 response = {
     200: 'Success',
     400: 'Invalid Argument',
+    401: 'Wrong Token',
+    402: 'Expired Token',
+    403: 'Re-login',
     500: 'Mapping Key Error'
 }
 

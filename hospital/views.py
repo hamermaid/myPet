@@ -1,13 +1,12 @@
-from django.contrib.auth.models import User
-from django.shortcuts import render
-
 # Create your views here.
 
 from hospital.models import Hospital
+from modual.decorator import token_required
 from modual.response import DefaultResponse
 from reviews.models import Reviews
 
 
+@token_required
 def info(request, hos_id):
     if request.method == "GET":
         try:
@@ -29,7 +28,6 @@ def info(request, hos_id):
             if '휴무' in i:
                 # restAt.append(i.replace(' 휴무', '').strip().split(','))
                 restAt = i.replace(' 휴무', '').strip().split(',')
-                print('restAT', restAt)
             else:
                 openAt.append(i.strip())
 
@@ -48,5 +46,4 @@ def info(request, hos_id):
             "care_available": animal,       # 케어 동물
             "facilities": info,             # 시설정보
           }
-        print('animal', data)
     return DefaultResponse(200, data)
