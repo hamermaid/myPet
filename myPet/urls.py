@@ -13,13 +13,14 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
 # from rest_framework.authtoken.views import obtain_auth_token
 from rest_framework_jwt.views import obtain_jwt_token, verify_jwt_token, refresh_jwt_token
 
-
+from myPet import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +28,4 @@ urlpatterns = [
     url('member/', include('member.urls')),
     url('hospital/', include('hospital.urls')),
     path('api/auth/', obtain_jwt_token),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

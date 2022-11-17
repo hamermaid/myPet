@@ -26,5 +26,5 @@ class Hospital(models.Model):
     clinic = models.CharField(max_length=2000, blank=True, null=True)
     open_time = models.TextField(blank=True, null=True)
     break_time = models.CharField(max_length=2000, blank=True, null=True)
-    picture = models.CharField(max_length=2000, blank=True, null=True)
+    picture = models.FileField(upload_to='media/', blank=True, null=True)
     star = models.CharField(max_length=5, default=0)

@@ -1,3 +1,5 @@
+from django.core.files.storage import FileSystemStorage
+from django.views.decorators.csrf import csrf_exempt
 from rest_framework.viewsets import ModelViewSet
 
 from modual.decorator import TokenCheck, token_required
@@ -34,5 +36,21 @@ def customRes(request):
 def defaultRes(request):
     testData = {
         'ex': '예시 데이터'
+    }
+    return DefaultResponse(200, testData)
+
+
+@csrf_exempt
+def imageUpload(request):
+    # data = json.loads(request.body)
+    uploaded_profile = request.FILES['test']
+    fs = FileSystemStorage(
+        location="media/test", base_url="/media/test"
+    )
+    filename = fs.save(uploaded_profile.name, uploaded_profile)
+    uploaded_profile_url = fs.url(filename)
+    print('data', uploaded_profile_url)
+    testData = {
+        'ex': filename
     }
     return DefaultResponse(200, testData)

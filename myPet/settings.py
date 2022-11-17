@@ -149,3 +149,5 @@ JWT_AUTH = {
     'JWT_AUTH_HEADER_PREFIX': 'Token',
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=7),
 }
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
